@@ -1,0 +1,53 @@
+<!-- 一開始即執行javascript的 init() function -->
+<body onload="init()">
+ <form   enctype="text/plain" accept-charset="utf-8">
+    <!-- 寄件者姓名    -->
+     <input id="nameText" type="text" name="Name"  value size="60" placeholder="姓名(name)" required>  <!-- required 必填欄位 ，placeholder 預設內容--> 
+     
+     <!-- 寄件者email -->
+     <input id="emailText" type="email" name="Email"  value size="60" placeholder="Email" required>
+     
+     <!-- 寄件者電話 -->
+     <input id="telText"type="tel" name="Phone"  value size="60" aria-invalid="false" placeholder="電話(phone)" required>
+     
+     <!-- 郵件主旨 -->
+     <input  id="subText" type="text" name="Subject"  value size="60" aria-invalid="false" placeholder="主旨(subject)" required>
+             
+     <!-- 郵件內容 -->
+     <textarea id="bodyText" name="your-message" cols="40" rows="10"  aria-required="true" aria-invalid="false" placeholder="你的訊息(Your Message)" required></textarea>
+     
+     <!-- 傳送按鈕 -->
+     <div>
+         <input type="button" value="送出訊息" onclick="submitHandler();">
+         <a id="mailTo"></a>
+     </div>
+ </form>
+</body>
+
+<script>
+//宣告預設表單內容為空 （你想要的話也可以加東西）
+    var initSubject='',initBody='';
+ 
+    //按下傳送按鈕後執行
+    function submitHandler(){
+        var to = "40723148@gm.nfu.edu.tw";//寫死的傳送對象 就是公司的信箱 不會顯示在網頁上
+        var name = nameText.value;//讀取ID為 nameTextuser 物件中的值
+        var email = emailText.value;
+        var tel = telText.value;
+        var subject = subText.value;
+//把user填的資料都塞到 mail body 中
+        var body = ""+bodyText.value+'%0A%0A%0A';//%0A是換行 換了三行
+            body += "From："+nameText.value+'%0A';
+            body += "Email："+emailText.value+'%0A';
+            body += "Tel："+telText.value;
+//傳送的主要程式碼
+        mailTo.href="mailto:"+to+"?subject="+subject+"&body="+body;
+        mailTo.click();
+    }
+//在body onload
+    function init(){
+        subText.value=initSubject;
+        toText.value=initTo;
+        bodyText.value=initBody;
+    }
+</script>
