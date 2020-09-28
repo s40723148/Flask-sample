@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+Design by TEMPLATED
+http://templated.co
+Released for free under the Creative Commons Attribution License
+
+Name       : Catmint 
+Description: A two-column, fixed-width design with dark color scheme.
+Version    : 1.0
+Released   : 20130910
+
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>U3project</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800" rel="stylesheet" />
+<link href="./../css/default.css" rel="stylesheet" type="text/css" media="all" />
+<link href="./../css/fonts.css" rel="stylesheet" type="text/css" media="all" />
+
+<!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
+
+</head>
+<body>
+<div id="header-wrapper">
+	<div id="header" class="container">
+		<div id="logo">
+			<h1><a href="#">U3project-3148</a></h1>
+		</div>
+		<div id="menu">
+			<ul>
+				<li><a href="index.html" accesskey="1" title="">Homepage</a></li>
+				<li><a href="About.html" accesskey="3" title="">About </a></li>
+				<li class="current_page_item"><a href="#" accesskey="3" title="">Return </a></li>
+				<a href="https://github.com/s40723148/Flask-sample"><img src="./../images/github-mark.png" width="50" height="50"></a>
+				<a href="/send_mail.html"><img src="./../images/Gmail.png" width="50" height="50"></a>
+			</ul>
+		</div>
+	</div>
+</div>
+<div id="header-featured"> </div>
+
+
+<div id="banner-wrapper">
+	<div id="banner" class="container">
+		<form action="#" method="post">
+			<label for="number">學號：</label><input class="info" type="text" name="name" id="number" placeholder="請輸入學號" /><br />
+			<label for="PCnumber">電腦號：</label><input class="info" type="text" name="model" id="PCnumber" placeholder="請輸入" /><br />
+			<label for="problem">問題說明：</label><p></p><textarea cols="50"rows="5"class="info" type="text" name="parameter" id="problem" placeholder="請輸入" ></textarea><br />
+			<label for="date">日期：</label>
+			<input type="date"id="date">
+			<input type="button" id="btn" value="提交" />
+		</form>
+		<table border="1" cellspacing="0" cellpadding="0" style="text-align: center;margin-top: 20px;"align="center">
+			<tr class="title2">
+				<th>學號</th>
+				<th>電腦號</th>
+				<th>問題說明</th>
+				<th>日期</th>
+			</tr>
+		</table>
+	</div>
+</div>
+
+<script>
+	var btn = document.getElementById('btn');
+	btn.onclick = function(){
+		var number = document.getElementById('number').value;
+		var PCnumber = document.getElementById('PCnumber').value;
+		var problem = document.getElementById('problem').value;
+		var date = document.getElementById('date').value;
+		if(number=="" | PCnumber=="" | problem=="" | date == ""){
+			alert("輸入不完整");
+		}else{
+			var table = document.getElementsByTagName('table')[0];
+			var tr = document.createElement('tr');
+			tr.innerHTML = "<td>"+number+"</td><td>"+PCnumber+"</td><td>"+problem+"</td><td>"+date+"</td>";
+			table.appendChild(tr);
+		}
+				
+	}
+</script>
+
+<div id="copyright" class="container">
+	<p>&copy; Untitled. All rights reserved. | Photos by <a href="http://fotogrph.com/">Fotogrph</a> | Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>.</p>
+</div>
+</body>
+</html>

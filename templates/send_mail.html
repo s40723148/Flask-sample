@@ -1,20 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+Design by TEMPLATED
+http://templated.co
+Released for free under the Creative Commons Attribution License
+
+Name       : Catmint 
+Description: A two-column, fixed-width design with dark color scheme.
+Version    : 1.0
+Released   : 20130910
+
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>U3project</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800" rel="stylesheet" />
+<link href="./../css/default.css" rel="stylesheet" type="text/css" media="all" />
+<link href="./../css/fonts.css" rel="stylesheet" type="text/css" media="all" />
+
+</head>
+<body>
+<div id="header-wrapper">
+	<div id="header" class="container">
+		<div id="logo">
+			<h1><a href="#">U3project-3148</a></h1>
+		</div>
+		<div id="menu">
+			<ul>
+				<li><a href="index.html" accesskey="1" title="">Homepage</a></li>
+				<li><a href="about.html" accesskey="3" title="">About </a></li>
+				<li><a href="return.html" accesskey="4" title="">Return</a></li>
+				<a href="https://github.com/s40723148/Flask-sample"><img src="./../images/github-mark.png" width="50" height="50"></a>
+				<a href="send_mail.html"><img src="./../images/Gmail.png" width="50" height="50"></a>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div id="header-featured"> </div>
+<div id="banner" class="container">
+<div id="page" class="container">
+		<div id="content">
+		<div class="title">
+			<h2>問題回報</h2>
+	</div>
+</div>
 <!-- 一開始即執行javascript的 init() function -->
 <body onload="init()">
  <form   enctype="text/plain" accept-charset="utf-8">
 
      <input id="nameText" type="text" name="Name"  value size="60" placeholder="姓名(name)" required> 
-     
+     <p></p>
 
      <input id="emailText" type="email" name="Email"  value size="60" placeholder="Email" required>
-     
- 
-     <input id="telText"type="tel" name="Phone"  value size="60" aria-invalid="false" placeholder="電話(phone)" required>
+     <p></p> 
+
+     <input  id="subText" type="text" name="Subject"  value size="60" aria-invalid="true" placeholder="主旨(subject)" required>
+     <p></p>
      
 
-     <input  id="subText" type="text" name="Subject"  value size="60" aria-invalid="false" placeholder="主旨(subject)" required>
-             
-
-     <textarea id="bodyText" name="your-message" cols="40" rows="10"  aria-required="true" aria-invalid="false" placeholder="你的訊息(Your Message)" required></textarea>
+     <textarea id="bodyText" name="your-message" cols="56" rows="10"  aria-required="true" aria-invalid="false" placeholder="你的訊息(Your Message)" required></textarea>
      
 
      <div>
@@ -33,13 +80,11 @@
         var to = "40723148@gm.nfu.edu.tw";//固定的傳送對象 
         var name = nameText.value;//讀取ID為 nameTextuser 物件中的值
         var email = emailText.value;
-        var tel = telText.value;
         var subject = subText.value;
 //把user填的資料都塞到 mail body 中
         var body = ""+bodyText.value+'%0A%0A%0A';//%0A是換行 換了三行
             body += "From："+nameText.value+'%0A';
             body += "Email："+emailText.value+'%0A';
-            body += "Tel："+telText.value;
 //傳送的主要程式碼
         mailTo.href="mailto:"+to+"?subject="+subject+"&body="+body;
         mailTo.click();
@@ -51,3 +96,9 @@
         bodyText.value=initBody;
     }
 </script>
+
+<p></p>
+<div id="copyright" class="container">
+	<p>&copy; Untitled. All rights reserved. | Photos by <a href="http://fotogrph.com/">Fotogrph</a> | Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>.</p>
+</div>
+</body>
